@@ -1,3 +1,4 @@
+console.clear()
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
@@ -30,10 +31,10 @@ const questions = [{
     message: 'List all contributers to the project',
 },
 {
-    type: 'checkbox',
-    choices: ["MIT", "ISC", "Apache-2.0", "0BSD", "Unlicense"],
+    type: 'list',
+    choices: ["MIT", "GNU", "Apache-2.0", "ISC", "Unlicense"],
     name: 'licenses',
-    message: 'List all licensed used',
+    message: 'Pick the licensing',
 },];
 
 // fs.writeFile
@@ -49,10 +50,11 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer
-        .prompt(questions).then(
-            // writeToFile("README.md", data)
+        .prompt(questions).then((data) => {
+            console.log(data.licenses)
+            writeToFile(`./data/${data.title}.md`, generateMD(data))
 
-
+        }
         )
 }
 
