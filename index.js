@@ -18,7 +18,7 @@ const questions = [{
 {
     type: 'input',
     name: 'install',
-    message: 'How do we install your dependencies?',
+    message: 'How do we install dependencies?',
 },
 {
     type: 'input',
@@ -28,14 +28,31 @@ const questions = [{
 {
     type: 'input',
     name: 'contributers',
-    message: 'List all contributers to the project',
+    message: 'How to contribute to the project',
+},
+{
+    type: 'input',
+    name: 'test',
+    message: 'Test instructions:',
 },
 {
     type: 'list',
     choices: ["MIT", "GNU", "Apache-2.0", "ISC", "Unlicense"],
     name: 'licenses',
     message: 'Pick the licensing',
-},];
+},
+{
+    type: 'input',
+    name: 'github',
+    message: 'Enter your Github username',
+},
+{
+    type: 'input',
+    name: 'email',
+    message: 'Enter your email',
+},
+
+];
 
 // fs.writeFile
 

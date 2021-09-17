@@ -4,25 +4,19 @@
 
 function renderLicenseBadge(license) {
   if (license === "MIT") {
-    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
+    return `<br> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n`
   }
   else if (license === "GNU") {
-    return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-
-    `
-  }
+    return `<br> [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)\n
+    `}
   else if (license === "Apache-2.0") {
-    return `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
-
-
+    return `<br> [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)\n`
   }
   else if (license === "ISC") {
-    `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
-
+    return `<br> [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)\n
   `}
   else {
-    return `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
-
+    return `<br> [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)\n
   `}
 
 }
@@ -39,33 +33,45 @@ function renderLicenseSection(license) { }
 function generateMarkdown(data) {
 
 
-  renderLicenseBadge(data.license)
-  return `# ${data.title}
+  return `# ${data.title}` +
+    renderLicenseBadge(data.licenses) +
 
-
-  ## Table of Contents
+    `## Table of Contents
   - [Description](#description)
   - [Installation](#installation)
   - [Application](#application)
-  - [Contributers](#contributers)
+  - [Contribution](#contributers)
+  - [Testing](#testing)
   - [Liceneses](#liceneses)
+  - [Questions](#questions)
 
   ## Description 
-  <p> ${data.description} </p>
+   ${data.description} 
   
   ## Installation 
-  <p> ${data.install} </p>
+   ${data.install} 
 
   ## Application
-  <p> ${data.application} </p>
+   ${data.application} 
 
-  ## Contributers
-  <p> ${data.contributers} </P>
+  ## Test Instructions
+   ${data.test} 
+  
+  ## Contribution Guidelines
+   ${data.contributers} 
 
   ## License
-  <p> ${data.licenses} </p>
-
-`;
+   ${data.licenses} 
+   Background: 
+  
+  ## Questions
+   How to Reach me:
+  <br>
+   Github: [https://github.com/${data.github}](https://github.com/${data.github}) 
+  <br> 
+   Email: [${data.email}](${data.email}) 
+ 
+` ;
 }
 
 module.exports = generateMarkdown;
