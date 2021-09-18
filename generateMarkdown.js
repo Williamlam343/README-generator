@@ -40,9 +40,9 @@ function generateMarkdown(data) {
   - [Description](#description)
   - [Installation](#installation)
   - [Application](#application)
-  - [Contribution](#contributers)
   - [Testing](#testing)
-  - [Liceneses](#liceneses)
+  - [Contribution](#contribution)
+  - [License](#license)
   - [Questions](#questions)
 
   ## Description 
@@ -54,10 +54,10 @@ function generateMarkdown(data) {
   ## Application
    ${data.application} 
 
-  ## Test Instructions
+  ## Testing
    ${data.test} 
   
-  ## Contribution Guidelines
+  ## Contribution
    ${data.contributers} 
 
   ## License
